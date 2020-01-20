@@ -50,6 +50,21 @@ class TennisTests: XCTestCase {
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
     
+    func testPlayerAAdvantage() {
+        increaseGame(pointBy: 3, forPlayer: playerB)
+        increaseGame(pointBy: 4, forPlayer: playerA)
+        let expectedScore = "Player A Has Advantage"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerAHasWonAfterAdvantage() {
+        increaseGame(pointBy: 3, forPlayer: playerB)
+        increaseGame(pointBy: 4, forPlayer: playerA)
+        increaseGame(pointBy: 1, forPlayer: playerA)
+        let expectedScore = "Player A Has Won"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
     private func increaseGame(pointBy: Int, forPlayer player: Player) {
         let range = pointBy
         for _ in 1...range {

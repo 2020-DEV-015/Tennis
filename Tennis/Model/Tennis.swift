@@ -19,9 +19,15 @@ class Tennis {
         if gameHasWinner() {
             return leadingPlayerName() + " Has Won"
         }
+        
         if gameReachedDeuce() {
             return "Deuce"
         }
+        
+        if playerHasAdvantage() {
+            return leadingPlayerName() + " Has Advantage"
+        }
+        
         let playerAScore = getScoreCall(forPoint: playerAPoints)
         if playerAPoints == playerBPoints {
             return playerAScore + "," + "All"
@@ -29,7 +35,6 @@ class Tennis {
         return playerAScore + "," + getScoreCall(forPoint: playerBPoints)
     }
 
-    
     private func gameReachedDeuce() -> Bool {
         if gameTied() && self.playerAPoints >= 3 && self.playerBPoints >= 3 {
             return true
@@ -38,17 +43,23 @@ class Tennis {
     }
     
     private func gameHasWinner() -> Bool {
-        if playerAPoints >= TennisRules.winningPoints && playerBPoints <= (playerAPoints - TennisRules.winByPoints){
-            return true
-        }
-        if playerBPoints >= TennisRules.winningPoints && playerAPoints <= (playerBPoints - TennisRules.winByPoints){
-            return true
-        }
-        return false
+        return playerHasWinningPoints() && playerLeadBy(point: TennisRules.winByPoints)
+    }
+    
+    private func playerHasAdvantage() -> Bool {
+        return playerHasWinningPoints() && playerLeadBy(point: TennisRules.advantagePoint)
     }
     
     private func gameTied() -> Bool {
         return playerAPoints == playerBPoints
+    }
+    
+    private func playerHasWinningPoints() -> Bool {
+        return playerAPoints >= TennisRules.winningPoints || playerBPoints >= TennisRules.winningPoints
+    }
+    
+    private func playerLeadBy(point: Int) -> Bool {
+        return playerBPoints <= (playerAPoints - point) || playerAPoints <= (playerBPoints - point)
     }
     
     private func leadingPlayerName() -> String {
