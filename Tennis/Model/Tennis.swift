@@ -10,14 +10,14 @@ class Tennis {
     }
 
     func getScore() -> String {
-        let playerAScore = getScore(forThePoint: playerA.points)
+        let playerAScore = getScoreCall(forPoint: playerA.points)
         if playerA.points == playerB.points {
             return playerAScore + "," + "All"
         }
-        return playerAScore + "," + getScore(forThePoint: playerB.points)
+        return playerAScore + "," + getScoreCall(forPoint: playerB.points)
     }
     
-    private func getScore(forThePoint point: Int) -> String {
+    private func getScoreCall(forPoint point: Int) -> String {
         switch point {
         case 0:
             return "Love"
