@@ -10,6 +10,25 @@ class Tennis {
     }
 
     func getScore() -> String {
-        return "Love, All"
+        let playerAScore = getScore(forThePoint: playerA.points)
+        if playerA.points == playerB.points {
+            return playerAScore + "," + "All"
+        }
+        return playerAScore + "," + getScore(forThePoint: playerB.points)
+    }
+    
+    private func getScore(forThePoint point: Int) -> String {
+        switch point {
+        case 0:
+            return "Love"
+        case 1:
+            return "Fifteen"
+        case 2:
+            return "Thirty"
+        case 3:
+            return "Forty"
+        default:
+            return "Invalid"
+        }
     }
 }
