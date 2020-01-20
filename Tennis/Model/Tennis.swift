@@ -2,7 +2,13 @@ class Tennis {
     
     private var playerA: Player
     private var playerB: Player
-    private let scores: [String] = ["Love", "Fifteen", "Thirty", "Forty"]
+    
+    private var playerAPoints: Int {
+        return self.playerA.points
+    }
+    private var playerBPoints: Int {
+        return self.playerB.points
+    }
     
     init(playerA: Player, playerB: Player) {
         self.playerA = playerA
@@ -10,11 +16,28 @@ class Tennis {
     }
 
     func getScore() -> String {
-        let playerAScore = getScoreCall(forPoint: playerA.points)
-        if playerA.points == playerB.points {
+        if gameHasWinner() {
+            return leadingPlayerName() + " Has Won"
+        }
+        let playerAScore = getScoreCall(forPoint: playerAPoints)
+        if playerAPoints == playerBPoints {
             return playerAScore + "," + "All"
         }
-        return playerAScore + "," + getScoreCall(forPoint: playerB.points)
+        return playerAScore + "," + getScoreCall(forPoint: playerBPoints)
+    }
+    
+    private func leadingPlayerName() -> String {
+        return playerAPoints > playerBPoints ? playerA.name: playerB.name
+    }
+    
+    private func gameHasWinner() -> Bool {
+        if playerAPoints >= TennisRules.winningPoints && playerBPoints <= (playerAPoints - TennisRules.winByPoints){
+            return true
+        }
+        if playerBPoints >= TennisRules.winningPoints && playerAPoints <= (playerBPoints - TennisRules.winByPoints){
+            return true
+        }
+        return false
     }
     
     private func getScoreCall(forPoint point: Int) -> String {

@@ -39,4 +39,13 @@ class TennisTests: XCTestCase {
         let expectedScore = "Forty,Love"
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
+
+    func testPlayerAWins_4_0() {
+        playerA.scored()
+        playerA.scored()
+        playerA.scored()
+        playerA.scored()
+        let expectedScore = "Player A Has Won"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
 }
