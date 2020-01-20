@@ -20,32 +20,40 @@ class TennisTests: XCTestCase {
     }
 
     func testPlayerAWinsFirstBall() {
-        playerA.scored()
+        increaseGame(pointBy: 1, forPlayer: playerA)
         let expectedScore = "Fifteen,Love"
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
     
     func testPlayerAWins_2_0() {
-        playerA.scored()
-        playerA.scored()
+        increaseGame(pointBy: 2, forPlayer: playerA)
         let expectedScore = "Thirty,Love"
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
     
     func testPlayerAWins_3_0() {
-        playerA.scored()
-        playerA.scored()
-        playerA.scored()
+        increaseGame(pointBy: 3, forPlayer: playerA)
         let expectedScore = "Forty,Love"
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
 
     func testPlayerAWins_4_0() {
-        playerA.scored()
-        playerA.scored()
-        playerA.scored()
-        playerA.scored()
+        increaseGame(pointBy: 4, forPlayer: playerA)
         let expectedScore = "Player A Has Won"
         XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testGameDeuce() {
+        increaseGame(pointBy: 4, forPlayer: playerA)
+        increaseGame(pointBy: 4, forPlayer: playerB)
+        let expectedScore = "Deuce"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    private func increaseGame(pointBy: Int, forPlayer player: Player) {
+        let range = pointBy
+        for _ in 1...range {
+            player.scored()
+        }
     }
 }
