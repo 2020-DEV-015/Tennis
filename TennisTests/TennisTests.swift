@@ -14,6 +14,16 @@ class TennisTests: XCTestCase {
         tennis = Tennis(playerA: playerA, playerB: playerB)
     }
     
+    func testPlayerAName() {
+        let expectedName = "Player A"
+        XCTAssertEqual(expectedName, tennis.getPlayerAName())
+    }
+    
+    func testPlayerBName() {
+        let expectedName = "Player B"
+        XCTAssertEqual(expectedName, tennis.getPlayerBName())
+    }
+    
     func testNewGameShouldReturnLoveAll() {
         let expectedScore = "Love,All"
         XCTAssertEqual(expectedScore, tennis.getScore())

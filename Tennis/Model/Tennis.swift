@@ -14,6 +14,14 @@ class Tennis {
         self.playerA = playerA
         self.playerB = playerB
     }
+    
+    func getPlayerAName() -> String {
+        return self.playerA.name
+    }
+
+    func getPlayerBName() -> String {
+        return self.playerB.name
+    }
 
     func getScore() -> String {
         if gameHasWinner() {
