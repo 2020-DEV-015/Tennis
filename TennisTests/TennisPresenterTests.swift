@@ -22,12 +22,12 @@ class TennisPresenterTests: XCTestCase {
     }
     
     func testUpdateGameScoreCalledAfterPlayerAServesBall() {
-        tennisPresenter.playerAServesBall()
+        tennisPresenter.servedBall(byPlayer: .playerA)
         XCTAssertTrue(mockTennisViewDelegate.updateGameScoreCalled)
     }
 
     func testUpdateGameScoreCalledAfterPlayerBServesBall() {
-        tennisPresenter.playerBServesBall()
+        tennisPresenter.servedBall(byPlayer: .playerB)
         XCTAssertTrue(mockTennisViewDelegate.updateGameScoreCalled)
     }
 }

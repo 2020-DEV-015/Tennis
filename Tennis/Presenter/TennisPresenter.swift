@@ -15,14 +15,21 @@ class TennisPresenter {
     }
     
     func startGame() {
-        tennisViewDelegate?.showPlayerNames(playerA: self.tennis.getPlayerAName(), playerB: self.tennis.getPlayerBName())
+        let playerNameA = self.tennis.getPlayerName(for: .playerA)
+        let playerNameB = self.tennis.getPlayerName(for: .playerB)
+        tennisViewDelegate?.showPlayerNames(playerA: playerNameA, playerB: playerNameB)
     }
 
-    func playerAServesBall() {
+    func servedBall(byPlayer player: PlayerSide) {
+        if self.scoredOnServe() {
+            self.tennis.scored(byPlayer: player)
+        } else {
+            self.tennis.scored(byPlayer: (player == .playerA ? .playerB: .playerA))
+        }
         tennisViewDelegate?.updateGameScore(score: tennis.getScore())
     }
-
-    func playerBServesBall() {
-        tennisViewDelegate?.updateGameScore(score: tennis.getScore())
+    
+    private func scoredOnServe() -> Bool {
+        return Bool.random()
     }
 }
