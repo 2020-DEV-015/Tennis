@@ -10,3 +10,8 @@ class Player {
         self.points = self.points + 1
     }
 }
+
+enum PlayerSide {
+    case playerA
+    case playerB
+}

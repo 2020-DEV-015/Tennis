@@ -15,14 +15,18 @@ class Tennis {
         self.playerB = playerB
     }
     
-    func getPlayerAName() -> String {
-        return self.playerA.name
+    func getPlayerName(for player: PlayerSide) -> String {
+        return  player == .playerA ? self.playerA.name: self.playerB.name
     }
-
-    func getPlayerBName() -> String {
-        return self.playerB.name
+    
+    func scored(byPlayer player: PlayerSide) {
+        if player == .playerA {
+            self.playerA.scored()
+        } else if player == .playerB {
+            self.playerB.scored()
+        }
     }
-
+    
     func getScore() -> String {
         if gameHasWinner() {
             return leadingPlayerName() + " Has Won"
