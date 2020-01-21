@@ -37,7 +37,7 @@ class TennisTests: XCTestCase {
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
 
-    func testPlayerAWins_4_0() {
+    func testPlayerAWinsTheGame() {
         increaseGame(pointBy: 4, forPlayer: playerA)
         let expectedScore = "Player A Has Won"
         XCTAssertEqual(expectedScore, tennis.getScore())
@@ -50,7 +50,7 @@ class TennisTests: XCTestCase {
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
     
-    func testPlayerAAdvantage() {
+    func testPlayerAHasAdvantage() {
         increaseGame(pointBy: 3, forPlayer: playerB)
         increaseGame(pointBy: 4, forPlayer: playerA)
         let expectedScore = "Player A Has Advantage"
@@ -59,9 +59,49 @@ class TennisTests: XCTestCase {
     
     func testPlayerAHasWonAfterAdvantage() {
         increaseGame(pointBy: 3, forPlayer: playerB)
-        increaseGame(pointBy: 4, forPlayer: playerA)
-        increaseGame(pointBy: 1, forPlayer: playerA)
+        increaseGame(pointBy: 5, forPlayer: playerA)
         let expectedScore = "Player A Has Won"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerBWins_0_1() {
+        increaseGame(pointBy: 1, forPlayer: playerB)
+        let expectedScore = "Love,Fifteen"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerBWins_1_2() {
+        increaseGame(pointBy: 1, forPlayer: playerA )
+        increaseGame(pointBy: 2, forPlayer: playerB)
+        let expectedScore = "Fifteen,Thirty"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerBWins_1_3() {
+        increaseGame(pointBy: 1, forPlayer: playerA )
+        increaseGame(pointBy: 3, forPlayer: playerB)
+        let expectedScore = "Fifteen,Forty"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerBWinsTheGame() {
+        increaseGame(pointBy: 1, forPlayer: playerA )
+        increaseGame(pointBy: 4, forPlayer: playerB )
+        let expectedScore = "Player B Has Won"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerBHasAdvantage() {
+        increaseGame(pointBy: 3, forPlayer: playerA )
+        increaseGame(pointBy: 4, forPlayer: playerB)
+        let expectedScore = "Player B Has Advantage"
+        XCTAssertEqual(expectedScore, tennis.getScore())
+    }
+    
+    func testPlayerBHasWonAfterAdvantage() {
+        increaseGame(pointBy: 4, forPlayer: playerA )
+        increaseGame(pointBy: 6, forPlayer: playerB)
+        let expectedScore = "Player B Has Won"
         XCTAssertEqual(expectedScore, tennis.getScore())
     }
     
