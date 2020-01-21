@@ -16,10 +16,15 @@ class MockTennisViewDelegate: TennisViewDelegate {
 class TennisPresenterTests: XCTestCase {
 
     private var mockTennisViewDelegate: MockTennisViewDelegate = MockTennisViewDelegate()
+    private var tennisPresenter: TennisPresenter!
+    
+    override func setUp() {
+        super.setUp()
+        let tennis = Tennis(playerA: Player(name: "Player A"), playerB: Player(name: "Player B"))
+        tennisPresenter = TennisPresenter(tennis: tennis, delegate: mockTennisViewDelegate)
+    }
     
     func testShowPlayersNameCalledOnGameStart() {
-        let tennisPresenter = TennisPresenter()
-        tennisPresenter.tennisViewDelegate = mockTennisViewDelegate
         tennisPresenter.startGame()
         XCTAssertTrue(mockTennisViewDelegate.showPlayerNamesCalled)
     }

@@ -4,8 +4,16 @@ protocol TennisViewDelegate: AnyObject {
 }
 
 class TennisPresenter {
+    
+    private var tennis: Tennis
     weak var tennisViewDelegate: TennisViewDelegate?
+    
+    init(tennis: Tennis, delegate: TennisViewDelegate) {
+        self.tennis = tennis
+        self.tennisViewDelegate = delegate
+    }
+    
     func startGame() {
-        tennisViewDelegate?.showPlayerNames(playerA: "Player A", playerB: "Player B")
+        tennisViewDelegate?.showPlayerNames(playerA: self.tennis.getPlayerAName(), playerB: self.tennis.getPlayerBName())
     }
 }
