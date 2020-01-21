@@ -1,18 +1,5 @@
 import XCTest
 @testable import Tennis
-
-class MockTennisViewDelegate: TennisViewDelegate {
-    
-    fileprivate var showPlayerNamesCalled = false
-    fileprivate var playerAName: String? = nil
-    fileprivate var playerBName: String? = nil
-    
-    func showPlayerNames(playerA: String, playerB: String) {
-        self.showPlayerNamesCalled = true
-        self.playerAName = playerA
-        self.playerBName = playerB
-    }
-}
 class TennisPresenterTests: XCTestCase {
 
     private var mockTennisViewDelegate: MockTennisViewDelegate = MockTennisViewDelegate()
@@ -24,8 +11,23 @@ class TennisPresenterTests: XCTestCase {
         tennisPresenter = TennisPresenter(tennis: tennis, delegate: mockTennisViewDelegate)
     }
     
+    override func tearDown() {
+        super.tearDown()
+        mockTennisViewDelegate.reset()
+    }
+    
     func testShowPlayersNameCalledOnGameStart() {
         tennisPresenter.startGame()
         XCTAssertTrue(mockTennisViewDelegate.showPlayerNamesCalled)
+    }
+    
+    func testUpdateGameScoreCalledAfterPlayerAServesBall() {
+        tennisPresenter.playerAServesBall()
+        XCTAssertTrue(mockTennisViewDelegate.updateGameScoreCalled)
+    }
+
+    func testUpdateGameScoreCalledAfterPlayerBServesBall() {
+        tennisPresenter.playerBServesBall()
+        XCTAssertTrue(mockTennisViewDelegate.updateGameScoreCalled)
     }
 }

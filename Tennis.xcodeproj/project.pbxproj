@@ -19,6 +19,7 @@
 		A2E7033023D63D300027BF91 /* TennisRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7032F23D63D300027BF91 /* TennisRules.swift */; };
 		A2E7033223D6BB460027BF91 /* TennisPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */; };
 		A2E7033523D6C6BB0027BF91 /* TennisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */; };
+		A2E7033723D6E7380027BF91 /* MockTennisViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033623D6E7380027BF91 /* MockTennisViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A2E7032F23D63D300027BF91 /* TennisRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisRules.swift; sourceTree = "<group>"; };
 		A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPresenterTests.swift; sourceTree = "<group>"; };
 		A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPresenter.swift; sourceTree = "<group>"; };
+		A2E7033623D6E7380027BF91 /* MockTennisViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTennisViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				A2E7032D23D61CAE0027BF91 /* PlayerTests.swift */,
 				A2E7032223D60CBF0027BF91 /* Info.plist */,
 				A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */,
+				A2E7033623D6E7380027BF91 /* MockTennisViewDelegate.swift */,
 			);
 			path = TennisTests;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E7033723D6E7380027BF91 /* MockTennisViewDelegate.swift in Sources */,
 				A2E7032E23D61CAE0027BF91 /* PlayerTests.swift in Sources */,
 				A2E7033223D6BB460027BF91 /* TennisPresenterTests.swift in Sources */,
 				A2E7032123D60CBF0027BF91 /* TennisTests.swift in Sources */,

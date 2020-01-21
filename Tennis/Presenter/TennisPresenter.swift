@@ -1,6 +1,7 @@
 
 protocol TennisViewDelegate: AnyObject {
     func showPlayerNames(playerA: String, playerB: String)
+    func updateGameScore(score: String)
 }
 
 class TennisPresenter {
@@ -15,5 +16,13 @@ class TennisPresenter {
     
     func startGame() {
         tennisViewDelegate?.showPlayerNames(playerA: self.tennis.getPlayerAName(), playerB: self.tennis.getPlayerBName())
+    }
+
+    func playerAServesBall() {
+        tennisViewDelegate?.updateGameScore(score: tennis.getScore())
+    }
+
+    func playerBServesBall() {
+        tennisViewDelegate?.updateGameScore(score: tennis.getScore())
     }
 }
