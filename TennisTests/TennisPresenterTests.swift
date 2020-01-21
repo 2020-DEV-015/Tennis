@@ -30,4 +30,9 @@ class TennisPresenterTests: XCTestCase {
         tennisPresenter.servedBall(byPlayer: .playerB)
         XCTAssertTrue(mockTennisViewDelegate.updateGameScoreCalled)
     }
+    
+    func testEnablePlayCalledAfteBallServed() {
+        tennisPresenter.servedBall(byPlayer: .playerA)
+        XCTAssertTrue(mockTennisViewDelegate.enablePlayCalled)
+    }
 }

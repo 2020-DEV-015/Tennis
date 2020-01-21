@@ -2,6 +2,7 @@
 protocol TennisViewDelegate: AnyObject {
     func showPlayerNames(playerA: String, playerB: String)
     func updateGameScore(score: String)
+    func enablePlay(forPlayer player: PlayerSide)
 }
 
 class TennisPresenter {
@@ -23,8 +24,11 @@ class TennisPresenter {
     func servedBall(byPlayer player: PlayerSide) {
         if self.scoredOnServe() {
             self.tennis.scored(byPlayer: player)
+            tennisViewDelegate?.enablePlay(forPlayer: player)
         } else {
-            self.tennis.scored(byPlayer: (player == .playerA ? .playerB: .playerA))
+            let scoredPlayer: PlayerSide = (player == .playerA ? .playerB: .playerA)
+            self.tennis.scored(byPlayer: scoredPlayer)
+            tennisViewDelegate?.enablePlay(forPlayer: scoredPlayer)
         }
         tennisViewDelegate?.updateGameScore(score: tennis.getScore())
     }

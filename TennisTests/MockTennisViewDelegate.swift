@@ -3,6 +3,7 @@ class MockTennisViewDelegate: TennisViewDelegate {
     
     var showPlayerNamesCalled = false
     var updateGameScoreCalled = false
+    var enablePlayCalled = false
     var playerAName: String? = nil
     var playerBName: String? = nil
     var gameScore: String? = nil
@@ -18,11 +19,16 @@ class MockTennisViewDelegate: TennisViewDelegate {
         self.gameScore = score
     }
     
+    func enablePlay(forPlayer player: PlayerSide) {
+        self.enablePlayCalled = true
+    }
+    
     func reset() {
         self.showPlayerNamesCalled = false
         self.playerBName = nil
         self.playerBName = nil
         self.updateGameScoreCalled = false
         self.gameScore = nil
+        self.enablePlayCalled = false
     }
 }
