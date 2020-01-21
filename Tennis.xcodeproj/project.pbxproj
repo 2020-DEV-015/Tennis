@@ -17,6 +17,8 @@
 		A2E7032C23D61BE30027BF91 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7032B23D61BE30027BF91 /* Player.swift */; };
 		A2E7032E23D61CAE0027BF91 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7032D23D61CAE0027BF91 /* PlayerTests.swift */; };
 		A2E7033023D63D300027BF91 /* TennisRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7032F23D63D300027BF91 /* TennisRules.swift */; };
+		A2E7033223D6BB460027BF91 /* TennisPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */; };
+		A2E7033523D6C6BB0027BF91 /* TennisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		A2E7032B23D61BE30027BF91 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A2E7032D23D61CAE0027BF91 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		A2E7032F23D63D300027BF91 /* TennisRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisRules.swift; sourceTree = "<group>"; };
+		A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPresenterTests.swift; sourceTree = "<group>"; };
+		A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E702DC23D602BB0027BF91 /* AppDelegate.swift */,
+				A2E7033323D6C6960027BF91 /* Presenter */,
 				A2E7032823D617460027BF91 /* Model */,
 				A2E702E023D602BB0027BF91 /* Main.storyboard */,
 				A2E702E323D602BF0027BF91 /* Assets.xcassets */,
@@ -102,6 +107,7 @@
 				A2E7032023D60CBF0027BF91 /* TennisTests.swift */,
 				A2E7032D23D61CAE0027BF91 /* PlayerTests.swift */,
 				A2E7032223D60CBF0027BF91 /* Info.plist */,
+				A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */,
 			);
 			path = TennisTests;
 			sourceTree = "<group>";
@@ -114,6 +120,14 @@
 				A2E7032F23D63D300027BF91 /* TennisRules.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A2E7033323D6C6960027BF91 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +236,7 @@
 				A2E7032A23D617670027BF91 /* Tennis.swift in Sources */,
 				A2E7032C23D61BE30027BF91 /* Player.swift in Sources */,
 				A2E702DD23D602BB0027BF91 /* AppDelegate.swift in Sources */,
+				A2E7033523D6C6BB0027BF91 /* TennisPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E7032E23D61CAE0027BF91 /* PlayerTests.swift in Sources */,
+				A2E7033223D6BB460027BF91 /* TennisPresenterTests.swift in Sources */,
 				A2E7032123D60CBF0027BF91 /* TennisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
