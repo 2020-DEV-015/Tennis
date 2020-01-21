@@ -3,9 +3,9 @@ import XCTest
 
 class TennisTests: XCTestCase {
     
-    var playerA: Player!
-    var playerB: Player!
-    var tennis: Tennis!
+    private var playerA: Player!
+    private var playerB: Player!
+    private var tennis: Tennis!
     
     override func setUp() {
         super.setUp()
