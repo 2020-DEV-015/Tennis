@@ -4,26 +4,111 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tennis View-->
         <scene sceneID="iFK-g3-vcs">
             <objects>
-                <viewController id="T0h-LS-3xD" sceneMemberID="viewController">
+                <viewController id="T0h-LS-3xD" customClass="TennisView" customModule="Tennis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRT-OI-0WE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxZ-Qp-hjU" userLabel="Ground View">
+                                <rect key="frame" x="0.0" y="193.5" width="375" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QV-cy-Yk2">
+                                        <rect key="frame" x="240.5" y="34.5" width="96.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzV-ti-fKB">
+                                        <rect key="frame" x="38" y="34.5" width="96.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abb-p1-CJa" userLabel="Player A Button">
+                                        <rect key="frame" x="38" y="75" width="150" height="150"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="caB-an-Pxf"/>
+                                            <constraint firstAttribute="height" constant="150" id="vfS-H3-uTp"/>
+                                        </constraints>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playerAPlays:" destination="T0h-LS-3xD" eventType="touchUpInside" id="K7A-u1-dhJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adb-Xb-hw8" userLabel="Player B Button">
+                                        <rect key="frame" x="187" y="75" width="150" height="150"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="SN7-hJ-6s0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="vVH-Ru-i9d"/>
+                                        </constraints>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playerBPlays:" destination="T0h-LS-3xD" eventType="touchUpInside" id="AyE-Xh-wnk"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-2b-yOW" userLabel="CenterPointView">
+                                        <rect key="frame" x="187" y="75" width="1" height="150"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="hm5-Pt-Nmb"/>
+                                            <constraint firstAttribute="width" constant="1" id="vmn-S9-SKE"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-Qr-QBU">
+                                        <rect key="frame" x="165" y="250" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="21K-Ug-eBI"/>
+                                    <constraint firstItem="abb-p1-CJa" firstAttribute="trailing" secondItem="LrF-2b-yOW" secondAttribute="trailing" id="37o-Ls-BZr"/>
+                                    <constraint firstItem="Adb-Xb-hw8" firstAttribute="centerY" secondItem="LrF-2b-yOW" secondAttribute="centerY" id="78a-si-Ceq"/>
+                                    <constraint firstItem="7QV-cy-Yk2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xzV-ti-fKB" secondAttribute="trailing" constant="10" id="8bp-5U-2ZN"/>
+                                    <constraint firstItem="rB2-Qr-QBU" firstAttribute="top" secondItem="LrF-2b-yOW" secondAttribute="bottom" constant="25" id="Dw5-rV-UcL"/>
+                                    <constraint firstItem="abb-p1-CJa" firstAttribute="top" secondItem="xzV-ti-fKB" secondAttribute="bottom" constant="20" id="G72-bJ-lGr"/>
+                                    <constraint firstItem="Adb-Xb-hw8" firstAttribute="leading" secondItem="LrF-2b-yOW" secondAttribute="leading" id="IXs-wg-nOM"/>
+                                    <constraint firstItem="LrF-2b-yOW" firstAttribute="centerX" secondItem="HxZ-Qp-hjU" secondAttribute="centerX" id="b49-WX-YJc"/>
+                                    <constraint firstItem="LrF-2b-yOW" firstAttribute="centerY" secondItem="HxZ-Qp-hjU" secondAttribute="centerY" id="e92-V8-20E"/>
+                                    <constraint firstItem="abb-p1-CJa" firstAttribute="centerY" secondItem="LrF-2b-yOW" secondAttribute="centerY" id="gS6-hI-Ybo"/>
+                                    <constraint firstItem="rB2-Qr-QBU" firstAttribute="centerX" secondItem="LrF-2b-yOW" secondAttribute="centerX" id="hT6-kt-idZ"/>
+                                    <constraint firstItem="xzV-ti-fKB" firstAttribute="leading" secondItem="abb-p1-CJa" secondAttribute="leading" id="ia8-S5-PNV"/>
+                                    <constraint firstItem="7QV-cy-Yk2" firstAttribute="trailing" secondItem="Adb-Xb-hw8" secondAttribute="trailing" id="lQh-mL-cPq"/>
+                                    <constraint firstItem="Adb-Xb-hw8" firstAttribute="top" secondItem="7QV-cy-Yk2" secondAttribute="bottom" constant="20" id="tum-Y9-ERp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HxZ-Qp-hjU" firstAttribute="leading" secondItem="ba0-9Y-2E0" secondAttribute="leading" id="dND-zk-G4i"/>
+                            <constraint firstItem="HxZ-Qp-hjU" firstAttribute="centerY" secondItem="ba0-9Y-2E0" secondAttribute="centerY" id="mYX-z7-QjF"/>
+                            <constraint firstItem="ba0-9Y-2E0" firstAttribute="trailing" secondItem="HxZ-Qp-hjU" secondAttribute="trailing" id="xDs-KX-0QN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ba0-9Y-2E0"/>
                     </view>
+                    <connections>
+                        <outlet property="gameScoreLabel" destination="rB2-Qr-QBU" id="Z8b-AC-Wd0"/>
+                        <outlet property="playerALabel" destination="xzV-ti-fKB" id="2Ew-06-gaK"/>
+                        <outlet property="playerAPlayButton" destination="abb-p1-CJa" id="HAt-33-FYM"/>
+                        <outlet property="playerBLabel" destination="7QV-cy-Yk2" id="iuX-iR-DI3"/>
+                        <outlet property="playerBPlayButton" destination="Adb-Xb-hw8" id="KW6-lq-vs4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7d5-Fk-iq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-352" y="-22"/>
+            <point key="canvasLocation" x="-352.80000000000001" y="-22.03898050974513"/>
         </scene>
     </scenes>
 </document>

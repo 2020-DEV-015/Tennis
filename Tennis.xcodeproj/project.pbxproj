@@ -20,6 +20,7 @@
 		A2E7033223D6BB460027BF91 /* TennisPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */; };
 		A2E7033523D6C6BB0027BF91 /* TennisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */; };
 		A2E7033723D6E7380027BF91 /* MockTennisViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033623D6E7380027BF91 /* MockTennisViewDelegate.swift */; };
+		A2E7033A23D71C6D0027BF91 /* TennisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7033923D71C6D0027BF91 /* TennisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A2E7033123D6BB460027BF91 /* TennisPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPresenterTests.swift; sourceTree = "<group>"; };
 		A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPresenter.swift; sourceTree = "<group>"; };
 		A2E7033623D6E7380027BF91 /* MockTennisViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTennisViewDelegate.swift; sourceTree = "<group>"; };
+		A2E7033923D71C6D0027BF91 /* TennisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				A2E702DC23D602BB0027BF91 /* AppDelegate.swift */,
-				A2E7033323D6C6960027BF91 /* Presenter */,
 				A2E7032823D617460027BF91 /* Model */,
+				A2E7033823D71C3D0027BF91 /* View */,
+				A2E7033323D6C6960027BF91 /* Presenter */,
 				A2E702E023D602BB0027BF91 /* Main.storyboard */,
 				A2E702E323D602BF0027BF91 /* Assets.xcassets */,
 				A2E702E523D602BF0027BF91 /* LaunchScreen.storyboard */,
@@ -131,6 +134,14 @@
 				A2E7033423D6C6BB0027BF91 /* TennisPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A2E7033823D71C3D0027BF91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2E7033923D71C6D0027BF91 /* TennisView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E7033023D63D300027BF91 /* TennisRules.swift in Sources */,
+				A2E7033A23D71C6D0027BF91 /* TennisView.swift in Sources */,
 				A2E7032A23D617670027BF91 /* Tennis.swift in Sources */,
 				A2E7032C23D61BE30027BF91 /* Player.swift in Sources */,
 				A2E702DD23D602BB0027BF91 /* AppDelegate.swift in Sources */,
